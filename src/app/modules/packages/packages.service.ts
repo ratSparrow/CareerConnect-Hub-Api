@@ -2,7 +2,7 @@ import ApiError from '../../errors/ApiError'
 
 import httpStatus from 'http-status'
 import { IPackages } from './jobs.interface'
-import { Packages } from './packages.model'
+import { Packages } from './jobs.model'
 
 const createPackages = async (payload: IPackages) => {
   const result = await Packages.create(payload)

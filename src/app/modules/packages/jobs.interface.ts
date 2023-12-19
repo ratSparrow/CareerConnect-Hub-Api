@@ -11,8 +11,9 @@ export type IJobs = {
   category: string
   jobType: ['Full-time', 'Part-time', 'Contract', 'Freelance']
   experienceLevel: string
+  skills: string
   benefits: string
   contactEmail: string
 }
 
-export type PackageModel = Model<IJobs>
+export type JobsModel = Model<IJobs>
