@@ -5,7 +5,7 @@ import { AuthRoutes } from '../modules/auth/auth.route'
 import { UserRoutes } from '../modules/users/user.route'
 import express from 'express'
 
-import { PackagesRoutes } from '../modules/packages/packages.routes'
+import { PackagesRoutes } from '../modules/packages/jobs.routes'
 
 const router = express.Router()
 const moduleRoutes = [

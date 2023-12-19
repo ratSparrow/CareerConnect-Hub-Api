@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose'
-import { IPackages, PackageModel } from './packages.interface'
+import { IPackages, PackageModel } from './jobs.interface'
 
 const PackageSchema = new Schema<IPackages>(
   {
