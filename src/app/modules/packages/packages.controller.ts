@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { catchAsync } from '../../../shared/catchAsync'
 import httpStatus from 'http-status'
 import { sendResponse } from '../../../shared/sendResponse'
-import { PackageService } from './packages.service'
+import { PackageService } from './jobs.service'
 
 const createPackages = catchAsync(async (req: Request, res: Response) => {
   const result = await PackageService.createPackages(req.body)

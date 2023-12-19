@@ -46,4 +46,4 @@ const PackageSchema = new Schema<IJobs>(
   },
 )
 
-export const Packages = model<IJobs, JobsModel>('packages', PackageSchema)
+export const Jobs = model<IJobs, JobsModel>('jobs', PackageSchema)
