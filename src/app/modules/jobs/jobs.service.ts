@@ -44,7 +44,7 @@ const deleteJobs = async (id: string) => {
   return result
 }
 
-export const Jobservice = {
+export const JobService = {
   createJobs,
   getAllJobs,
   updateJobs,

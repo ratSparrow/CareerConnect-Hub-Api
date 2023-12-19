@@ -1,17 +1,16 @@
 import { AdminRoutes } from '../modules/admin/admin.route'
 
 import { AuthRoutes } from '../modules/auth/auth.route'
+import { JobRoutes } from '../modules/jobs/jobs.routes'
 
 import { UserRoutes } from '../modules/users/user.route'
 import express from 'express'
 
-import { PackagesRoutes } from '../modules/packages/jobs.routes'
-
 const router = express.Router()
 const moduleRoutes = [
   {
-    path: '/packages',
-    route: PackagesRoutes.router,
+    path: '/jobs',
+    route: JobRoutes.router,
   },
 
   {
