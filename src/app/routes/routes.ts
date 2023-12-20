@@ -1,6 +1,7 @@
 import { AdminRoutes } from '../modules/admin/admin.route'
 
 import { AuthRoutes } from '../modules/auth/auth.route'
+import { BlogRoutes } from '../modules/blogs/blogs.routes'
 import { JobRoutes } from '../modules/jobs/jobs.routes'
 
 import { UserRoutes } from '../modules/users/user.route'
@@ -11,6 +12,10 @@ const moduleRoutes = [
   {
     path: '/jobs',
     route: JobRoutes.router,
+  },
+  {
+    path: '/blogs',
+    route: BlogRoutes.router,
   },
 
   {

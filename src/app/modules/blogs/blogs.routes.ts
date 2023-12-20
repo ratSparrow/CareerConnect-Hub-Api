@@ -2,7 +2,7 @@ import { ENUM_USER_ROLE } from '../../../enums/user'
 import auth from '../../middlewares/auth'
 
 import express from 'express'
-import { JobsController } from './blogs.controller'
+import { BlogController } from './blogs.controller'
 
 const router = express.Router()
 
@@ -10,14 +10,14 @@ router.post(
   '/',
   // RequestValidation.ValidateRequest(SubServicesValidation.createSubServices),
   auth(ENUM_USER_ROLE.ADMIN),
-  JobsController.createJobs,
+  BlogController.createBlogs,
 )
-router.get('/', JobsController.getAllJobs)
-router.get('/:id', JobsController.getSingleJobs)
+router.get('/', BlogController.getAllBlogs)
+router.get('/:id', BlogController.getSingleBlog)
 
-router.patch('/:id', auth(ENUM_USER_ROLE.ADMIN), JobsController.updateJobs)
-router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), JobsController.deleteJobs)
+router.patch('/:id', auth(ENUM_USER_ROLE.ADMIN), BlogController.updateBlog)
+router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), BlogController.deleteBlog)
 
-export const JobRoutes = {
+export const BlogRoutes = {
   router,
 }

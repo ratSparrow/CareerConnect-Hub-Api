@@ -57,7 +57,7 @@ const deleteBlog = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
-export const JobsController = {
+export const BlogController = {
   createBlogs,
   getAllBlogs,
   getSingleBlog,
