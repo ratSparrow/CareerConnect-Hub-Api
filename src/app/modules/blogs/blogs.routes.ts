@@ -2,7 +2,7 @@ import { ENUM_USER_ROLE } from '../../../enums/user'
 import auth from '../../middlewares/auth'
 
 import express from 'express'
-import { JobsController } from './jobs.controller'
+import { JobsController } from './blogs.controller'
 
 const router = express.Router()
 

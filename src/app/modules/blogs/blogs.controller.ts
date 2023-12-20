@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { catchAsync } from '../../../shared/catchAsync'
 import httpStatus from 'http-status'
 import { sendResponse } from '../../../shared/sendResponse'
-import { JobService } from './jobs.service'
+import { JobService } from './blogs.service'
 
 const createJobs = catchAsync(async (req: Request, res: Response) => {
   const result = await JobService.createJobs(req.body)
