@@ -3,64 +3,64 @@ import { Request, Response } from 'express'
 import { catchAsync } from '../../../shared/catchAsync'
 import httpStatus from 'http-status'
 import { sendResponse } from '../../../shared/sendResponse'
-import { JobService } from './blogs.service'
+import { BlogService } from './blogs.service'
 
-const createJobs = catchAsync(async (req: Request, res: Response) => {
-  const result = await JobService.createJobs(req.body)
+const createBlogs = catchAsync(async (req: Request, res: Response) => {
+  const result = await BlogService.createBlogs(req.body)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Jobs Created Successfully',
+    message: 'Blog Created Successfully',
     data: result,
   })
 })
-const getAllJobs = catchAsync(async (req: Request, res: Response) => {
-  const result = await JobService.getAllJobs()
+const getAllBlogs = catchAsync(async (req: Request, res: Response) => {
+  const result = await BlogService.getAllBlogs()
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Jobs retrieved Successfully',
+    message: 'Blog retrieved Successfully',
     data: result,
   })
 })
-const getSingleJobs = catchAsync(async (req: Request, res: Response) => {
+const getSingleBlog = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
-  const result = await JobService.getSingleJobs(id)
+  const result = await BlogService.getSingleBlog(id)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Jobs retrieved Successfully',
+    message: 'Blog retrieved Successfully',
     data: result,
   })
 })
 
-const updateJobs = catchAsync(async (req: Request, res: Response) => {
+const updateBlog = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id
   const updatedData = req.body
-  const result = await JobService.updateJobs(id, updatedData)
+  const result = await BlogService.updateBlog(id, updatedData)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Job updated successfully',
+    message: 'Blog updated successfully',
     data: result,
   })
 })
 
-const deleteJobs = catchAsync(async (req: Request, res: Response) => {
+const deleteBlog = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
-  const result = await JobService.deleteJobs(id)
+  const result = await BlogService.deleteBlog(id)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'JOb deleted successfully',
+    message: 'Blog deleted successfully',
     data: result,
   })
 })
 
 export const JobsController = {
-  createJobs,
-  getAllJobs,
-  getSingleJobs,
-  updateJobs,
-  deleteJobs,
+  createBlogs,
+  getAllBlogs,
+  getSingleBlog,
+  updateBlog,
+  deleteBlog,
 }
