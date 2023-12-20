@@ -1,42 +1,48 @@
 import { Schema, model } from 'mongoose'
-import { IJobs, JobsModel } from './blogs.interface'
+import { BlogModel, IBlogs } from './blogs.interface'
 
-const PackageSchema = new Schema<IJobs>(
+const BlogSchema = new Schema<IBlogs>(
   {
     title: {
       type: String,
       required: true,
     },
-    company: {
+    author: {
       type: String,
       required: true,
     },
-    location: {
+    content: {
       type: String,
       required: true,
     },
-    description: {
+    publishDate: {
       type: String,
       required: true,
     },
-    requirements: [String],
-    salary: {
+    views: {
       type: Number,
       default: 0,
     },
-
-    deadline: Date,
-    category: String,
-    jobType: {
-      enum: ['Full-time', 'Part-time', 'Contract', 'Freelance'],
+    likes: {
+      type: Number,
+      default: 0,
     },
-    experienceLevel: {
-      type: String,
-      enum: ['Entry', 'Intermediate', 'Senior'],
+    comments: {
+      type: {
+        user: {
+          type: String,
+          required: false,
+        },
+        commentText: {
+          type: String,
+          required: false,
+        },
+        commentDate: {
+          type: String,
+          required: false,
+        },
+      },
     },
-    skills: [String],
-    benefits: [String],
-    contactEmail: String,
   },
   {
     timestamps: true,
@@ -46,4 +52,4 @@ const PackageSchema = new Schema<IJobs>(
   },
 )
 
-export const Jobs = model<IJobs, JobsModel>('jobs', PackageSchema)
+export const Blogs = model<IBlogs, BlogModel>('blogs', BlogSchema)

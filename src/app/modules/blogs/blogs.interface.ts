@@ -2,7 +2,7 @@ import { Model } from 'mongoose'
 
 export type IComments = {
   user: string
-  commentext: string
+  commentText: string
   commentDate: string
 }
 
