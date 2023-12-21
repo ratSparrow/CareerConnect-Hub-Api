@@ -6,7 +6,7 @@ const AdminSchema = new Schema<IAdmin>(
     email: {
       type: String,
       required: true,
-      unique:true
+      unique: true,
     },
     name: {
       type: {
@@ -16,15 +16,14 @@ const AdminSchema = new Schema<IAdmin>(
         },
         lastName: {
           type: String,
-          required: true,
+          required: false,
         },
       },
-      required: true,
     },
     phoneNumber: {
       type: String,
       required: true,
-      unique:true
+      unique: true,
     },
     password: {
       type: String,
@@ -38,11 +37,11 @@ const AdminSchema = new Schema<IAdmin>(
     },
     address: {
       type: String,
-      required: true,
+      required: false,
     },
     profileImg: {
       type: String,
-      required: true,
+      required: false,
     },
     permissions: {
       type: String,
