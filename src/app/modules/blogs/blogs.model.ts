@@ -27,22 +27,24 @@ const BlogSchema = new Schema<IBlogs>(
       type: Number,
       default: 0,
     },
-    comments: {
-      type: {
-        user: {
-          type: String,
-          required: false,
-        },
-        commentText: {
-          type: String,
-          required: false,
-        },
-        commentDate: {
-          type: String,
-          required: false,
+    comments: [
+      {
+        type: {
+          user: {
+            type: String,
+            required: false,
+          },
+          commentText: {
+            type: String,
+            required: false,
+          },
+          commentDate: {
+            type: String,
+            required: false,
+          },
         },
       },
-    },
+    ],
   },
   {
     timestamps: true,

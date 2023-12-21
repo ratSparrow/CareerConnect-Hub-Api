@@ -13,7 +13,7 @@ export type IBlogs = {
   publishDate: string
   views: number
   likes: number
-  comments: IComments
+  comments: [IComments]
 }
 
 export type BlogModel = Model<IBlogs>
