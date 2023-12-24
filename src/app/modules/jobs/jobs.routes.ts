@@ -9,7 +9,7 @@ const router = express.Router()
 router.post(
   '/',
   // RequestValidation.ValidateRequest(SubServicesValidation.createSubServices),
-  auth(ENUM_USER_ROLE.ADMIN),
+  // auth(ENUM_USER_ROLE.ADMIN),
   JobsController.createJobs,
 )
 router.get('/', JobsController.getAllJobs)
