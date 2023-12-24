@@ -3,6 +3,7 @@ import { AdminRoutes } from '../modules/admin/admin.route'
 import { AuthRoutes } from '../modules/auth/auth.route'
 import { BlogRoutes } from '../modules/blogs/blogs.routes'
 import { CompanyRoutes } from '../modules/company/company.routes'
+import { EducationRoutes } from '../modules/education/education.route'
 import { AllEventsRoutes } from '../modules/events/events.route'
 import { JobRoutes } from '../modules/jobs/jobs.routes'
 
@@ -38,6 +39,10 @@ const moduleRoutes = [
   {
     path: '/events',
     route: AllEventsRoutes.router,
+  },
+  {
+    path: '/education',
+    route: EducationRoutes.router,
   },
 ]
 
