@@ -1,7 +1,9 @@
 import express from 'express'
-import { UserController } from './user.controller'
 import { ENUM_USER_ROLE } from '../../../enums/user'
 import auth from '../../middlewares/auth'
+import { RequestValidation } from '../../middlewares/validateRequest'
+import { UserController } from './user.controller'
+import { UserValidaion } from './user.validation'
 
 const router = express.Router()
 
@@ -16,8 +18,11 @@ router.patch(
   UserController.updateUserProfile,
 )
 
-
-router.post('/signup', UserController.createUser)
+router.post(
+  '/signup',
+  RequestValidation.ValidateRequest(UserValidaion.userSchema),
+  UserController.createUser,
+)
 router.get(
   '/',
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
@@ -39,7 +44,6 @@ router.delete(
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
   UserController.deleteSingleUser,
 )
-
 
 export const UserRoutes = {
   router,
