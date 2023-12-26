@@ -2,13 +2,15 @@ import { ENUM_USER_ROLE } from '../../../enums/user'
 import auth from '../../middlewares/auth'
 
 import express from 'express'
+import { RequestValidation } from '../../middlewares/validateRequest'
 import { AllCompanyController } from './company.controller'
+import { ComanyValidaion } from './company.validation'
 
 const router = express.Router()
 
 router.post(
   '/',
-  // RequestValidation.ValidateRequest(SubServicesValidation.createSubServices),
+  RequestValidation.ValidateRequest(ComanyValidaion.companySchema),
   auth(ENUM_USER_ROLE.ADMIN),
   AllCompanyController.createCompany,
 )

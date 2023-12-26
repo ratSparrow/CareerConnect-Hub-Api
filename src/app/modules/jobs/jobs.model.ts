@@ -80,6 +80,10 @@ const PackageSchema = new Schema<IJobs>(
       type: String,
       required: false,
     },
+    companyId: {
+      type: Schema.Types.ObjectId,
+      ref: 'company',
+    },
   },
   {
     timestamps: true,
