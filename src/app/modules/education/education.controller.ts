@@ -3,34 +3,34 @@ import { Request, Response } from 'express'
 import { catchAsync } from '../../../shared/catchAsync'
 import httpStatus from 'http-status'
 import { sendResponse } from '../../../shared/sendResponse'
-import { AllEducation } from './education.service'
+import { EducationService } from './education.service'
 
 const createEducation = catchAsync(async (req: Request, res: Response) => {
-  const result = await AllEducation.createEducation(req.body)
+  const result = await EducationService.createEducation(req.body)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Events Created Successfully',
+    message: 'Education Created Successfully',
     data: result,
   })
 })
 const getAllEducation = catchAsync(async (req: Request, res: Response) => {
-  const result = await AllEducation.getAllEducation()
+  const result = await EducationService.getAllEducation()
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Events retrieved Successfully',
+    message: 'Education retrieved Successfully',
     data: result,
   })
 })
 
 const getSingleEducation = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
-  const result = await AllEducation.getSingleEducation(id)
+  const result = await EducationService.getSingleEducation(id)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Event retrieved Successfully',
+    message: 'Education retrieved Successfully',
     data: result,
   })
 })
@@ -38,22 +38,22 @@ const getSingleEducation = catchAsync(async (req: Request, res: Response) => {
 const updateEducation = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id
   const updatedData = req.body
-  const result = await AllEducation.updateEducation(id, updatedData)
+  const result = await EducationService.updateEducation(id, updatedData)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Event updated successfully',
+    message: 'Education updated successfully',
     data: result,
   })
 })
 
 const deleteEducation = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
-  const result = await AllEducation.deleteEducation(id)
+  const result = await EducationService.deleteEducation(id)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: ' Event deleted successfully',
+    message: ' Education deleted successfully',
     data: result,
   })
 })

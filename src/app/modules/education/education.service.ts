@@ -39,7 +39,7 @@ const deleteEducation = async (id: string) => {
   return result
 }
 
-export const AllEducation = {
+export const EducationService = {
   createEducation,
   getAllEducation,
   updateEducation,
