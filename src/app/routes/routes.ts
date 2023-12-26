@@ -7,6 +7,7 @@ import { EducationRoutes } from '../modules/education/education.route'
 import { AllEventsRoutes } from '../modules/events/events.route'
 import { ExperienceRoutes } from '../modules/experience/experience.route'
 import { JobRoutes } from '../modules/jobs/jobs.routes'
+import { PortfolioRoutes } from '../modules/portfolio/portfolio.route'
 import { ProjectRoutes } from '../modules/project/project.route'
 import { SkillRoutes } from '../modules/skills/skill.route'
 import { TrainingRoutes } from '../modules/training/training.route'
@@ -63,6 +64,10 @@ const moduleRoutes = [
   {
     path: '/skill',
     route: SkillRoutes.router,
+  },
+  {
+    path: '/portfolio',
+    route: PortfolioRoutes.router,
   },
 ]
 
