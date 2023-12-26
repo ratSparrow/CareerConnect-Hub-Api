@@ -10,6 +10,8 @@ const router = express.Router()
 
 router.post(
   '/',
+  // RequestValidation.ValidateRequest(SubServicesValidation.createSubServices),
+  // auth(ENUM_USER_ROLE.ADMIN),
   RequestValidation.ValidateRequest(ComanyValidaion.companySchema),
   auth(ENUM_USER_ROLE.ADMIN),
   AllCompanyController.createCompany,
