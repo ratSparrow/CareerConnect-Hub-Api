@@ -1,4 +1,5 @@
 import { AdminRoutes } from '../modules/admin/admin.route'
+import { AppliedJobRoutes } from '../modules/appliedJob/appliedJob.route'
 
 import { AuthRoutes } from '../modules/auth/auth.route'
 import { BlogRoutes } from '../modules/blogs/blogs.routes'
@@ -68,6 +69,10 @@ const moduleRoutes = [
   {
     path: '/portfolio',
     route: PortfolioRoutes.router,
+  },
+  {
+    path: '/applied-job',
+    route: AppliedJobRoutes.router,
   },
 ]
 
