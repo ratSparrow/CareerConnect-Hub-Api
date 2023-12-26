@@ -4,6 +4,8 @@ import { catchAsync } from '../../../shared/catchAsync'
 import httpStatus from 'http-status'
 import { sendResponse } from '../../../shared/sendResponse'
 import { JobService } from './jobs.service'
+import { pick } from '../../../shared/pick'
+import { jobFilterableFields } from './jobs.constant'
 
 const createJobs = catchAsync(async (req: Request, res: Response) => {
   const result = await JobService.createJobs(req.body)
@@ -14,8 +16,16 @@ const createJobs = catchAsync(async (req: Request, res: Response) => {
     data: result,
   })
 })
+
 const getAllJobs = catchAsync(async (req: Request, res: Response) => {
-  const result = await JobService.getAllJobs()
+  const paginationFields = ["page", "limit", "sortBy", "sortOrder"];
+
+  const filters = pick(req.query, jobFilterableFields);
+
+  const paginationOptions = pick(req.query, paginationFields);
+
+  const result = await JobService.getAllJobs(filters,
+    paginationOptions)
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -23,6 +33,7 @@ const getAllJobs = catchAsync(async (req: Request, res: Response) => {
     data: result,
   })
 })
+
 const getSingleJobs = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
   const result = await JobService.getSingleJobs(id)
