@@ -83,6 +83,7 @@ const PackageSchema = new Schema<IJobs>(
     companyId: {
       type: Schema.Types.ObjectId,
       ref: 'company',
+      required: true,
     },
   },
   {
