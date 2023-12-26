@@ -9,6 +9,7 @@ export type IExperience = {
   endDate?: string
   currentlyWorking: boolean
   description?: string
+  responsibility: string
 }
 
 export type ExperienceModel = Model<IExperience>

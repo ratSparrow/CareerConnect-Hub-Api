@@ -1,9 +1,9 @@
 import { Schema, model } from 'mongoose'
-import { ExperienceModel, IExperience } from './experience.interface'
+import { ITraining, TrainingModel } from './training.interface'
 
-const ExperienceSchema = new Schema<IExperience>(
+const TrainingSchema = new Schema<ITraining>(
   {
-    profile: {
+    title: {
       type: String,
       required: true,
     },
@@ -23,7 +23,7 @@ const ExperienceSchema = new Schema<IExperience>(
       type: String,
       required: false,
     },
-    isWorkFromHome: {
+    online: {
       type: Boolean,
       required: false,
     },
@@ -31,13 +31,9 @@ const ExperienceSchema = new Schema<IExperience>(
       type: String,
       required: false,
     },
-    currentlyWorking: {
+    currentlyOngoing: {
       type: Boolean,
       required: false,
-    },
-    responsibility: {
-      type: String,
-      required: true,
     },
   },
   {
@@ -48,7 +44,7 @@ const ExperienceSchema = new Schema<IExperience>(
   },
 )
 
-export const Experience = model<IExperience, ExperienceModel>(
-  'experience',
-  ExperienceSchema,
+export const Training = model<ITraining, TrainingModel>(
+  'training',
+  TrainingSchema,
 )
