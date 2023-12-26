@@ -10,7 +10,11 @@ const router = express.Router()
 
 router.post(
   '/',
+
+  // RequestValidation.ValidateRequest(SubServicesValidation.createSubServices),
+
   RequestValidation.ValidateRequest(JobValidaion.jobSchema),
+
   // auth(ENUM_USER_ROLE.ADMIN),
   JobsController.createJobs,
 )

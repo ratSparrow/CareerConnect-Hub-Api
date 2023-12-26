@@ -14,8 +14,48 @@ const EventSchema = new Schema<IEvents>(
     },
     description: {
       type: String,
-      required: false,
+      required: true,
     },
+    date: {
+      type: String,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
+    },
+    speakers: [
+      {
+        type: {
+          name: {
+            type: String,
+            required: String,
+          },
+          title: {
+            type: String,
+            required: String,
+          },
+          bio: {
+            type: String,
+            required: String,
+          },
+        },
+      },
+    ],
+    agenda: [
+      {
+        type: {
+          time: {
+            type: String,
+            required: String,
+          },
+          event: {
+            type: String,
+            required: String,
+          },
+        },
+      },
+    ],
   },
   {
     timestamps: true,
