@@ -6,7 +6,7 @@ export type IUser = {
   name?: UserName
   phoneNumber?: string
   password: string
-  role: 'user' | 'admin' | 'super_admin'
+  role: 'applicant' | 'admin' | 'super_admin' | 'recruiter'
   address?: string
   profileImg?: string
 }

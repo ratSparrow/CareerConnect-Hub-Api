@@ -10,11 +10,13 @@ export type ISocialMediaLinks = {
 }
 export type IContactInfo = {
   email: string
-  phone?: string
+  phone: string
   address: string
 }
 export type ICompany = {
   name: string
+  password: string
+  role: 'recruiter'
   description: string
   industry: string
   location: string
@@ -23,6 +25,9 @@ export type ICompany = {
   size: ICompanySize
   socialMedia?: ISocialMediaLinks
   contact: IContactInfo
+  status: 'approved' | 'denied' | 'pending'
+  numberOfEmployees?: string
+  introducing: string
 }
 
 export type CompanyModel = Model<ICompany>
