@@ -7,6 +7,7 @@ export type IComments = {
 }
 
 export type IBlogs = {
+  img?: string
   title: string
   author: string
   content: string

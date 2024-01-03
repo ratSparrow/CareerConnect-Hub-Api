@@ -24,16 +24,32 @@ const getAllAppliedJob = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
-const getSingleAppliedJob = catchAsync(async (req: Request, res: Response) => {
-  const { id } = req.params
-  const result = await AppliedJobService.getSingleAppliedJob(id)
-  sendResponse(res, {
-    statusCode: httpStatus.OK,
-    success: true,
-    message: 'AppliedJob retrieved Successfully',
-    data: result,
-  })
-})
+const getAppliedJobByCompany = catchAsync(
+  async (req: Request, res: Response) => {
+    const { companyEmail } = req.params
+    const result = await AppliedJobService.getAppliedJobByCompany(companyEmail)
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'AppliedJob retrieved Successfully',
+      data: result,
+    })
+  },
+)
+const getAppliedJobByApplicant = catchAsync(
+  async (req: Request, res: Response) => {
+    const { applicantEmail } = req.params
+    const result = await AppliedJobService.getAppliedJobByApplicant(
+      applicantEmail,
+    )
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'AppliedJob retrieved Successfully',
+      data: result,
+    })
+  },
+)
 
 const updateAppliedJob = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id
@@ -61,7 +77,8 @@ const deleteAppliedJob = catchAsync(async (req: Request, res: Response) => {
 export const AppliedJobController = {
   createAppliedJob,
   getAllAppliedJob,
-  getSingleAppliedJob,
+  getAppliedJobByCompany,
   updateAppliedJob,
   deleteAppliedJob,
+  getAppliedJobByApplicant,
 }

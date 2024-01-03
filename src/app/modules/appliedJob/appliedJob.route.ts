@@ -5,13 +5,16 @@ import { AppliedJobController } from './appliedJob.controller'
 
 const router = express.Router()
 
-router.post(
-  '/',
-
-  AppliedJobController.createAppliedJob,
-)
+router.post('/', AppliedJobController.createAppliedJob)
 router.get('/', AppliedJobController.getAllAppliedJob)
-router.get('/:id', AppliedJobController.getSingleAppliedJob)
+router.get(
+  '/company/:companyEmail',
+  AppliedJobController.getAppliedJobByCompany,
+)
+router.get(
+  '/applicant/:applicantEmail',
+  AppliedJobController.getAppliedJobByApplicant,
+)
 router.patch(
   '/:id',
   auth(ENUM_USER_ROLE.ADMIN),
