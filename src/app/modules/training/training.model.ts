@@ -7,6 +7,10 @@ const TrainingSchema = new Schema<ITraining>(
       type: String,
       required: true,
     },
+    userEmail: {
+      type: String,
+      required: true,
+    },
     organization: {
       type: String,
       required: true,

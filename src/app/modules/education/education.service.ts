@@ -13,7 +13,7 @@ const getAllEducation = async () => {
 }
 
 const getSingleEducation = async (id: string) => {
-  const result = await Education.findById(id)
+  const result = await Education.findOne({ userEmail: id })
   return result
 }
 

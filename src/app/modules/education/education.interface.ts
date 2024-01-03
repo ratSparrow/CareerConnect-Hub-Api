@@ -8,6 +8,7 @@ export type IEducation = {
   description: string
   performanceScale: 'CGPA' | 'GPA'
   cgpa: string
+  userEmail:string
 }
 
 export type EducationModel = Model<IEducation>

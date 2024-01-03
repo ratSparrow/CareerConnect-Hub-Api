@@ -7,6 +7,10 @@ const ProjectSchema = new Schema<IProject>(
       type: String,
       required: true,
     },
+    userEmail: {
+      type: String,
+      required: true,
+    },
     startMonth: {
       type: String,
       required: false,
