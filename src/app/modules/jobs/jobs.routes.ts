@@ -15,8 +15,11 @@ router.post(
   // auth(ENUM_USER_ROLE.ADMIN),
   JobsController.createJobs,
 )
-router.get('/', JobsController.getAllJobs)
+router.get('/company/:companyMail', JobsController.getJobsByCompany)
 router.get('/:id', JobsController.getSingleJobs)
+router.get('/', JobsController.getAllJobs)
+
+
 
 router.patch(
   '/:id',

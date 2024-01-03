@@ -9,6 +9,10 @@ const SkillSchema = new Schema<ISkill>(
         required: true,
       },
     ],
+    userEmail: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

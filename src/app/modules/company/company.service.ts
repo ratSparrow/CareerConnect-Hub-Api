@@ -2,8 +2,33 @@ import ApiError from '../../errors/ApiError'
 import httpStatus from 'http-status'
 import { ICompany } from './company.interface'
 import { Company } from './company.model'
+import { User } from '../users/user.model'
 
 const createCompany = async (payload: ICompany) => {
+  const companyExists = await Company.findOne({ email: payload.contact.email })
+
+  const userExists = await User.findOne({ email: payload.contact.email })
+
+  if (companyExists && userExists) {
+    throw new ApiError(
+      httpStatus.BAD_REQUEST,
+      'A Company already exist to this email and phone Number',
+    )
+  }
+
+  payload.role = 'recruiter'
+  payload.status = 'pending'
+  const mCompanyData = {
+    email: payload.contact.email,
+    phoneNumber: payload.contact.phone,
+    role: payload.role,
+    password: payload.password,
+  }
+
+  const user = await User.create(mCompanyData)
+  if (!user) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Company Can not created now.')
+  }
   const result = await Company.create(payload)
   return result
 }

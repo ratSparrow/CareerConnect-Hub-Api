@@ -13,7 +13,7 @@ const getAllTraining = async () => {
 }
 
 const getSingleTraining = async (id: string) => {
-  const result = await Training.findById(id)
+  const result = await Training.findOne({ userEmail: id })
   return result
 }
 

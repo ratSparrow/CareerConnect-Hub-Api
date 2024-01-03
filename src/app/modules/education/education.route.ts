@@ -5,11 +5,7 @@ import { EducationController } from './education.controller'
 
 const router = express.Router()
 
-router.post(
-  '/',
-
-  EducationController.createEducation,
-)
+router.post('/', EducationController.createEducation)
 router.get('/', EducationController.getAllEducation)
 router.get('/:id', EducationController.getSingleEducation)
 router.patch(

@@ -1,9 +1,8 @@
 import express from 'express'
 import { ENUM_USER_ROLE } from '../../../enums/user'
 import auth from '../../middlewares/auth'
-import { RequestValidation } from '../../middlewares/validateRequest'
+
 import { UserController } from './user.controller'
-import { UserValidaion } from './user.validation'
 
 const router = express.Router()
 
@@ -20,7 +19,7 @@ router.patch(
 
 router.post(
   '/signup',
-  RequestValidation.ValidateRequest(UserValidaion.userSchema),
+  // RequestValidation.ValidateRequest(UserValidaion.userSchema),
   UserController.createUser,
 )
 router.get(

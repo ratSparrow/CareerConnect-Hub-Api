@@ -37,7 +37,7 @@ const UserSchema = new Schema<IUser>(
     },
     role: {
       type: String,
-      enum: ['user', 'admin', 'super_admin'],
+      enum: ['applicant', 'recruiter', 'admin', 'super_admin'],
       required: true,
     },
     address: {

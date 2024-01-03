@@ -8,6 +8,10 @@ const CompanySchema = new Schema<ICompany>(
       required: true,
       unique: true,
     },
+    password: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
@@ -26,6 +30,19 @@ const CompanySchema = new Schema<ICompany>(
     },
     logoUrl: {
       type: String,
+      required: true,
+    },
+    numberOfEmployees: {
+      type: String,
+      required: true,
+    },
+    introducing: {
+      type: String,
+      required: true,
+    },
+    role: {
+      type: String,
+      enum: ['recruiter'],
       required: true,
     },
     size: {
@@ -48,6 +65,11 @@ const CompanySchema = new Schema<ICompany>(
           required: false,
         },
       },
+    },
+    status: {
+      type: String,
+      enum: ['approved', 'denied', 'pending'],
+      required: true,
     },
     contact: {
       type: {

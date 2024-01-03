@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import httpStatus from 'http-status'
 import { JwtPayload } from 'jsonwebtoken'
 import ApiError from '../../errors/ApiError'
@@ -10,10 +9,10 @@ const createUser = async (payload: IUser) => {
   if (userExist) {
     throw new ApiError(
       httpStatus.BAD_REQUEST,
-      'An user already exist to this email and phone Number',
+      'An applicant already exist to this email and phone Number',
     )
   }
-  payload.role = 'user'
+  payload.role = 'applicant'
   const result = await User.create(payload)
   return result
 }

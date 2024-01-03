@@ -7,6 +7,7 @@ export type IProject = {
   currentlyOngoing?: boolean
   projectLink: string
   description: string
+  userEmail:string
 }
 
 export type ProjectModel = Model<IProject>

@@ -9,11 +9,17 @@ const createAppliedJob = async (payload: IAppliedJob) => {
 }
 const getAllAppliedJob = async () => {
   const result = await AppliedJob.find()
+    .populate('jobId')
+    .populate('companyId')
+    .populate('jobSeekerId')
   return result
 }
 
 const getSingleAppliedJob = async (id: string) => {
-  const result = await AppliedJob.findById(id)
+  const result = await AppliedJob.find({ jobSeekerId: id })
+    .populate('jobId')
+    .populate('companyId')
+    .populate('jobSeekerId')
   return result
 }
 

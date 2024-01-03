@@ -6,6 +6,7 @@ import { sendResponse } from '../../../shared/sendResponse'
 import { AllCompany } from './company.service'
 
 const createCompany = catchAsync(async (req: Request, res: Response) => {
+
   const result = await AllCompany.createCompany(req.body)
   sendResponse(res, {
     statusCode: httpStatus.OK,

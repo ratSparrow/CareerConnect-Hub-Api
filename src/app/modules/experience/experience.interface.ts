@@ -10,6 +10,7 @@ export type IExperience = {
   currentlyWorking: boolean
   description?: string
   responsibility: string
+  userEmail: string
 }
 
 export type ExperienceModel = Model<IExperience>

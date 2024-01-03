@@ -32,6 +32,10 @@ const EducationSchema = new Schema<IEducation>(
       type: String,
       required: false,
     },
+    userEmail: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

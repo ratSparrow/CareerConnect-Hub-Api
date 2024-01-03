@@ -13,7 +13,7 @@ const getAllProject = async () => {
 }
 
 const getSingleProject = async (id: string) => {
-  const result = await Project.findById(id)
+  const result = await Project.findOne({ userEmail: id })
   return result
 }
 

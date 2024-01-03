@@ -7,6 +7,10 @@ const ExperienceSchema = new Schema<IExperience>(
       type: String,
       required: true,
     },
+    userEmail: {
+      type: String,
+      required: true,
+    },
     organization: {
       type: String,
       required: true,

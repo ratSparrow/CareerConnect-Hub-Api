@@ -9,7 +9,7 @@ export type ITraining = {
   endDate?: string
   currentlyOngoing: boolean
   description?: string
-
+  userEmail: string
 }
 
 export type TrainingModel = Model<ITraining>
