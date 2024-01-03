@@ -45,6 +45,18 @@ const getSingleJobs = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const getJobsByCompany = catchAsync(async (req: Request, res: Response) => {
+  const { companyMail } = req.params
+
+  const result = await JobService.getJobsByCompany(companyMail)
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Jobs retrieved Successfully',
+    data: result,
+  })
+})
+
 const updateJobs = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id
   const updatedData = req.body
@@ -74,4 +86,5 @@ export const JobsController = {
   getSingleJobs,
   updateJobs,
   deleteJobs,
+  getJobsByCompany,
 }

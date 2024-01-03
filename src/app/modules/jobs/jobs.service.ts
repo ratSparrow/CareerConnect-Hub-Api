@@ -8,6 +8,7 @@ import { jobSearchableFields } from './jobs.constant'
 import { IJobFilters, IJobs } from './jobs.interface'
 import { Jobs } from './jobs.model'
 
+
 const createJobs = async (payload: IJobs) => {
   const result = await Jobs.create(payload)
   return result
@@ -72,6 +73,11 @@ const getSingleJobs = async (id: string) => {
 
   return result
 }
+const getJobsByCompany = async (companyMail: string) => {
+  const result = await Jobs.find({ contactEmail: companyMail })
+
+  return result
+}
 
 const getJobsById = async (id: string) => {
   const result = await Jobs.find({ id })
@@ -105,4 +111,5 @@ export const JobService = {
   deleteJobs,
   getJobsById,
   getSingleJobs,
+  getJobsByCompany,
 }
