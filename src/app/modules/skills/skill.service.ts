@@ -13,7 +13,7 @@ const getAllSkill = async () => {
 }
 
 const getSingleSkill = async (id: string) => {
-  const result = await Skill.findOne({ userEmail: id })
+  const result = await Skill.find({ userEmail: id })
   return result
 }
 

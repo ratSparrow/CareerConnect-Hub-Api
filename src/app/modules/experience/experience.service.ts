@@ -13,7 +13,7 @@ const getAllExperience = async () => {
 }
 
 const getSingleExperience = async (id: string) => {
-  const result = await Experience.findOne({ userEmail: id })
+  const result = await Experience.find({ userEmail: id })
   return result
 }
 
