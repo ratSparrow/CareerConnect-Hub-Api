@@ -13,9 +13,7 @@ const getAllAppliedJob = async () => {
 }
 
 const getAppliedJobByApplicant = async (id: string) => {
-  const result = await AppliedJob.findOne({ jobSeekerEmail: id }).populate(
-    'jobId',
-  )
+  const result = await AppliedJob.find({ jobSeekerEmail: id }).populate('jobId')
 
   return result
 }

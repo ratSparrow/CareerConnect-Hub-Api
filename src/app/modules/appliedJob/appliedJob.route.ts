@@ -7,10 +7,12 @@ const router = express.Router()
 
 router.post('/', AppliedJobController.createAppliedJob)
 router.get('/', AppliedJobController.getAllAppliedJob)
+// by company email
 router.get(
   '/company/:companyEmail',
   AppliedJobController.getAppliedJobByCompany,
 )
+// by applicant email
 router.get(
   '/applicant/:applicantEmail',
   AppliedJobController.getAppliedJobByApplicant,
