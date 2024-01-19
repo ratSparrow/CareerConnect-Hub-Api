@@ -3,18 +3,18 @@ import { AppliedJobModel, IAppliedJob } from './appliedJob.interface'
 
 const AppliedJobSchema = new Schema<IAppliedJob>(
   {
-    companyId: {
-      type: Schema.Types.ObjectId,
+    companyEmail: {
+      type: String,
       ref: 'company',
       required: true,
     },
-    jobSeekerId: {
-      type: Schema.Types.ObjectId,
+    jobSeekerEmail: {
+      type: String,
       ref: 'user',
       required: true,
     },
     jobId: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: 'jobs',
       required: true,
     },

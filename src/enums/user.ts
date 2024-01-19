@@ -1,5 +1,6 @@
 export enum ENUM_USER_ROLE {
-  USER = 'user',
+  USER = 'applicant',
   ADMIN = 'admin',
+  RECRUITER = 'recruiter',
   SUPER_ADMIN = 'super_admin',
 }

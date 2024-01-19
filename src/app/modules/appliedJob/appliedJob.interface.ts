@@ -1,9 +1,9 @@
-import { Model, Schema } from 'mongoose'
+import { Model } from 'mongoose'
 
 export type IAppliedJob = {
-  companyId: Schema.Types.ObjectId
-  jobSeekerId: Schema.Types.ObjectId
-  jobId: Schema.Types.ObjectId
+  companyEmail: string
+  jobSeekerEmail: string
+  jobId: string
 }
 
 export type AppliedJobModel = Model<IAppliedJob>

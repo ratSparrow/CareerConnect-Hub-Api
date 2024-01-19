@@ -11,6 +11,10 @@ const BlogSchema = new Schema<IBlogs>(
       type: String,
       required: true,
     },
+    img: {
+      type: String,
+      required: false,
+    },
     content: {
       type: String,
       required: true,

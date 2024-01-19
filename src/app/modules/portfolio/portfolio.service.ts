@@ -13,7 +13,7 @@ const getAllPortfolio = async () => {
 }
 
 const getSinglePortfolio = async (id: string) => {
-  const result = await Portfolio.findOne({ userEmail: id })
+  const result = await Portfolio.find({ userEmail: id })
   return result
 }
 

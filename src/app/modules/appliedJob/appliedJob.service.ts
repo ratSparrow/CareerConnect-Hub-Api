@@ -8,18 +8,18 @@ const createAppliedJob = async (payload: IAppliedJob) => {
   return result
 }
 const getAllAppliedJob = async () => {
-  const result = await AppliedJob.find()
-    .populate('jobId')
-    .populate('companyId')
-    .populate('jobSeekerId')
+  const result = await AppliedJob.find().populate('jobId')
   return result
 }
 
-const getSingleAppliedJob = async (id: string) => {
-  const result = await AppliedJob.find({ jobSeekerId: id })
-    .populate('jobId')
-    .populate('companyId')
-    .populate('jobSeekerId')
+const getAppliedJobByApplicant = async (id: string) => {
+  const result = await AppliedJob.find({ jobSeekerEmail: id }).populate('jobId')
+
+  return result
+}
+const getAppliedJobByCompany = async (id: string) => {
+  const result = await AppliedJob.find({ companyEmail: id }).populate('jobId')
+
   return result
 }
 
@@ -50,5 +50,6 @@ export const AppliedJobService = {
   getAllAppliedJob,
   updateAppliedJob,
   deleteAppliedJob,
-  getSingleAppliedJob,
+  getAppliedJobByCompany,
+  getAppliedJobByApplicant,
 }
